@@ -7,19 +7,19 @@
     - [Selectors](#selectors)
     - [Properties](#properties)
   1. [CSS](#css)
-    - [Naming Conventions and Methodologies - BEM](#bem)
-    - [Syntax and Formatting](#syntax-formatting)
+    - [Naming Conventions and Methodologies](#naming-conventions-and-methodologies)
+    - [Syntax and Formatting](#syntax-and-formatting)
     - [Comments](#comments)
     - [ID Selectors](#id-selectors)
     - [Shorthand Notation](#shorthand-notation)
-    - [Pixels vs. rem](#pixel-rem)
-    - [Color Units](#color)
+    - [Pixels vs rem](#pixels-vs-rem)
+    - [Color Units](#color-units)
     - [Border](#border)
     - [Quotes](#quotes)
-    - [!important](#important)
+    - [!important](#!important)
     - [Vertical Margins](#vertical-margins)
   1. [What Next?](#what-next)
-    - [Must-Watch CSS Videos](#must-watch-css)
+    - [Must-Watch CSS Videos](#must-watch-css-videos)
     - [CSS Reading List](#css-reading-list)
     - [Websites to follow](#websites-to-follow)
     - [Podcasts](#podcasts)
@@ -73,9 +73,9 @@ In gist:
 
 ## CSS
 
-###Naming Conventions and Methodologies - BEM
+###Naming Conventions and Methodologies
 
-BEM stands for “Block”, “Element”, “Modifier”. It is a front-end methodology: a new way of thinking when developing Web interfaces.
+We will be using BEM for our naming convention. BEM stands for “Block”, “Element”, “Modifier”. It is a front-end methodology: a new way of thinking when developing Web interfaces.
 
 Further Read: [Official BEM Website](https://en.bem.info/)
 
