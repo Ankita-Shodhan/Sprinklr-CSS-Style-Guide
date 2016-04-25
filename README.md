@@ -18,6 +18,7 @@
     - [Quotes](#quotes)
     - [!important](#!important)
     - [Vertical Margins](#vertical-margins)
+    - [Calculations](#Calculations)
   1. [What Next?](#what-next)
     - [Must-Watch CSS Videos](#must-watch-css-videos)
     - [CSS Reading List](#css-reading-list)
@@ -209,33 +210,11 @@ These classes are fairly loose, and don’t tell us much. Even though we can wor
 </form>
 ```
 
-You can abbreviate class names while you are using it in subsequent elements.
-
-*Example*
-
-```html
-<div class="topbar">
-    <div class="topbar__context">
-        <div class="topbar__ctx__container">
-            <div class="topbar__ctx__ctnr">
-                ...
-            </div>
-        </div>
-    </div>
-</div>
-```
-
-here ```context``` is abbreviated to ```ctx``` and ```container``` is abbreviated to ```ctnr```. The class should be abbreviated only in its subsequent use.
-
-Please do not abbreviate words like ```icon``` to ```icn```. Use abbreviation only for lengthy words.
-
 >Important Note
 
->While using BEM in a component, don't abbreviate the component's class. For example ```topbar``` in the above case. A list of acronyms to be used in the CSS have to be specified in STYLE_ACRONYMS.md file
+>Never reference ```js-``` prefixed class names from CSS files. ```js-``` are used exclusively from JS files.
 
-Also never reference ```js-``` prefixed class names from CSS files. ```js-``` are used exclusively from JS files.
-
-Use the ```is-``` prefix for state rules that are shared between CSS and JS.
+>Use the ```is-``` prefix for state rules that are shared between CSS and JS.
 
 ###Syntax and Formatting
 
@@ -248,7 +227,8 @@ Use the ```is-``` prefix for state rules that are shared between CSS and JS.
 * Put a trailing semi-colon (;) on your last declaration.
 * Put blank lines between rule declarations
 * Write your CSS in alphabetical order
-* 0 as a length should have no unit (e.g., Use .5 instead of 0.5 and -.5rem instead of -0.5rem).
+* 0 as a length should have no unit (e.g., Use 0 instead of 0rem)
+* Don't prefix property values with a leading zero (e.g., Use .5 instead of 0.5 and -.5rem instead of -0.5rem).
 
 *Bad*
 
@@ -465,7 +445,7 @@ Use `0` instead of `none` to specify that a style has no border.
 
 ### Quotes
 
-Quotes are optional in CSS and SCSS. Obvious chooses to use quotes as it is visually clearer that the string is not a selector or a style property.
+Quotes are optional in CSS and SCSS. You should use single quotes as it is visually clearer that the string is not a selector or a style property.
 
 **Bad**
 
@@ -509,6 +489,26 @@ Further Read: [Implications of using important](http://stackoverflow.com/questio
 Don’t use ```margin-top```. Vertical margins collapse. Always prefer ```padding-top``` or ```margin-bottom``` on preceding elements.
 
 Further Read: [What You Should Know About Collapsing Margins](https://css-tricks.com/what-you-should-know-about-collapsing-margins/) and [Sitepoint's Collapsing Margins](http://www.sitepoint.com/web-foundations/collapsing-margins/)
+
+### Calculations
+
+Top-level numeric calculations should always be wrapped in parentheses. Not only does this requirement dramatically improve readability, it also prevents some edge cases by forcing css to evaluate the contents of the parentheses.
+
+**Bad**
+
+```css
+.foo {
+  width: 100% / 3;
+}
+```
+
+**Good**
+
+```css
+.foo {
+  width: (100% / 3);
+}
+```
 
 ## What Next?
 
